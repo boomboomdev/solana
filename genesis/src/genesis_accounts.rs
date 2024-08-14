@@ -127,6 +127,12 @@ pub const CREATOR_STAKER_INFOS: &[StakerInfo] = &[
         lamports: 5_000_000 * LAMPORTS_PER_SOL,
         withdrawer: Some("Aj3K933zdRQhYEJi2Yjz8hJWXN3Z3hrKJQtPtE8VmUnq"),
     },
+    StakerInfo {
+        name: "customized_staker",
+        staker: "4e4SRatx8wUz145eaFnLiP9v1XQDMz93K1HpHELKEF1V",
+        lamports: 5_000_000 * LAMPORTS_PER_SOL,
+        withdrawer: Some("4e4SRatx8wUz145eaFnLiP9v1XQDMz93K1HpHELKEF1V"),
+    },
 ];
 
 pub const SERVICE_STAKER_INFOS: &[StakerInfo] = &[
