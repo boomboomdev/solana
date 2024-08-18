@@ -85,6 +85,12 @@ pub const COMMUNITY_STAKER_INFOS: &[StakerInfo] = &[
         staker: "Eo1iDtrZZiAkQFA8u431hedChaSUnPbU8MWg849MFvEZ",
         lamports: 5_000_000 * LAMPORTS_PER_SOL,
         withdrawer: Some("8CUUMKYNGxdgYio5CLHRHyzMEhhVRMcqefgE6dLqnVRK"),
+    },
+    StakerInfo {
+        name: "shrill charity",
+        staker: "BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG",
+        lamports: 5_000_000 * LAMPORTS_PER_SOL,
+        withdrawer: Some("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"),
     }
 ];
 
