@@ -42,6 +42,12 @@ pub const CREATOR_STAKER_INFOS: &[StakerInfo] = &[
         staker: "uE3TVEffRp69mrgknYr71M18GDqL7GxCNGYYRjb3oUt",
         lamports: 5_000_000 * LAMPORTS_PER_SOL,
         withdrawer: Some("59SLqk4ete5QttM1WmjfMA7uNJnJVFLQqXJSy9rvuj7c"),
+    },
+    StakerInfo {
+        name: "custom stake",
+        staker: "BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG",
+        lamports: 5_000_000 * LAMPORTS_PER_SOL,
+        withdrawer: Some("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"),
     }
 ];
 
