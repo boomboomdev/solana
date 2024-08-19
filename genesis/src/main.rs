@@ -578,7 +578,7 @@ fn main() -> Result<(), Box<dyn error::Error>> {
     }
 
     genesis_config.add_account(
-        Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"),
+        Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG").expect("msg"),
         AccountSharedData::new(12345678*LAMPORTS_PER_SOL, 0, &system_program::id()),
     );
 
