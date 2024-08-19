@@ -134,29 +134,29 @@ pub fn add_genesis_accounts(genesis_config: &mut GenesisConfig, mut issued_lampo
         );
 
     // "one thanks" (community pool) gets 500_000_000SOL (total) - above distributions
-    create_and_add_stakes(
-        genesis_config,
-        &StakerInfo {
-            name: "one thanks",
-            staker: "7vEAL3nS9CWmy1q6njUUyHE7Cf5RmyQpND6CsoHjzPiR",
-            lamports: (500_000_000 * LAMPORTS_PER_SOL).saturating_sub(issued_lamports),
-            withdrawer: Some("3FFaheyqtyAXZSYxDzsr5CVKvJuvZD1WE1VEsBtDbRqB"),
-        },
-        &UNLOCKS_ALL_DAY_ZERO,
-        None,
-    );
+    // create_and_add_stakes(
+    //     genesis_config,
+    //     &StakerInfo {
+    //         name: "one thanks",
+    //         staker: "7vEAL3nS9CWmy1q6njUUyHE7Cf5RmyQpND6CsoHjzPiR",
+    //         lamports: (500_000_000 * LAMPORTS_PER_SOL).saturating_sub(issued_lamports),
+    //         withdrawer: Some("3FFaheyqtyAXZSYxDzsr5CVKvJuvZD1WE1VEsBtDbRqB"),
+    //     },
+    //     &UNLOCKS_ALL_DAY_ZERO,
+    //     None,
+    // );
 
-    create_and_add_stakes(
-        genesis_config,
-        &StakerInfo {
-            name: "custome_stake",
-            staker: "BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG",
-            lamports: (500_000_000 * LAMPORTS_PER_SOL).saturating_sub(issued_lamports),
-            withdrawer: Some("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"),
-        },
-        &UNLOCKS_ALL_DAY_ZERO,
-        None,
-    );
+    // create_and_add_stakes(
+    //     genesis_config,
+    //     &StakerInfo {
+    //         name: "custome_stake",
+    //         staker: "BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG",
+    //         lamports: (500_000_000 * LAMPORTS_PER_SOL).saturating_sub(issued_lamports),
+    //         withdrawer: Some("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"),
+    //     },
+    //     &UNLOCKS_ALL_DAY_ZERO,
+    //     None,
+    // );
     
 
     // Insert the account with the specified balance
