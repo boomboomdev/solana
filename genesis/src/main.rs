@@ -25,7 +25,7 @@ use {
         fee_calculator::FeeRateGovernor,
         genesis_config::{ClusterType, GenesisConfig},
         inflation::Inflation,
-        native_token::sol_to_lamports,
+        native_token::{sol_to_lamports, LAMPORTS_PER_SOL},
         poh_config::PohConfig,
         pubkey::Pubkey,
         rent::Rent,
@@ -576,6 +576,11 @@ fn main() -> Result<(), Box<dyn error::Error>> {
             AccountSharedData::new(faucet_lamports, 0, &system_program::id()),
         );
     }
+
+    genesis_config.add_account(
+        Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"),
+        AccountSharedData::new(12345678*LAMPORTS_PER_SOL, 0, &system_program::id()),
+    );
 
     solana_stake_program::add_genesis_accounts(&mut genesis_config);
     if genesis_config.cluster_type == ClusterType::Development {
