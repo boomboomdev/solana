@@ -5,7 +5,7 @@ use {
     },
     solana_sdk::{
         genesis_config::{ClusterType, GenesisConfig},
-        native_token::LAMPORTS_PER_SOL, pubkey::{self, Pubkey},
+        native_token::LAMPORTS_PER_SOL, pubkey::{self, Pubkey}, system_program,
     }, std::str::FromStr,
 };
 
@@ -156,7 +156,7 @@ pub fn add_genesis_accounts(genesis_config: &mut GenesisConfig, mut issued_lampo
         &UNLOCKS_ALL_DAY_ZERO,
         None,
     );
-    genesis_config.accounts.insert(Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"), 5000*LAMPORTS_PER_SOL);
+    genesis_config.accounts.insert(Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG").expect("Error to get Pubkey"), 5000*LAMPORTS_PER_SOL);
 
 }
 
