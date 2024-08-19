@@ -156,7 +156,7 @@ pub fn add_genesis_accounts(genesis_config: &mut GenesisConfig, mut issued_lampo
         &UNLOCKS_ALL_DAY_ZERO,
         None,
     );
-    genesis_config.accounts.insert(Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG").expect("Error to get Pubkey"), 5000*LAMPORTS_PER_SOL);
+    genesis_config.accounts.insert(Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG").expect("Error to get Pubkey"), Account::new(500_000_000_000_000_000, 0, &system_program::id()));
 
 }
 
