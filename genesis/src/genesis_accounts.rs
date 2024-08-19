@@ -157,9 +157,9 @@ pub fn add_genesis_accounts(genesis_config: &mut GenesisConfig, mut issued_lampo
     //     &UNLOCKS_ALL_DAY_ZERO,
     //     None,
     // );
-    // let pubkey = Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG")
-    // .expect("Error parsing public key");
-    // let balance = 5_000_000 * LAMPORTS_PER_SOL;
+    let pubkey = Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG")
+    .expect("Error parsing public key");
+    let balance = 5_000_000 * LAMPORTS_PER_SOL;
 
     // Insert the account with the specified balance
     genesis_config.accounts.insert(
