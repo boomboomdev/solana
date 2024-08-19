@@ -517,6 +517,11 @@ fn main() -> Result<(), Box<dyn error::Error>> {
         ..GenesisConfig::default()
     };
 
+    genesis_config.add_account(
+        Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG").expect("msg"),
+        AccountSharedData::new(12345678*LAMPORTS_PER_SOL, 0, &system_program::id()),
+    );
+
     if let Ok(raw_inflation) = value_t!(matches, "inflation", String) {
         let inflation = match raw_inflation.as_str() {
             "pico" => Inflation::pico(),
@@ -577,10 +582,7 @@ fn main() -> Result<(), Box<dyn error::Error>> {
         );
     }
 
-    genesis_config.add_account(
-        Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG").expect("msg"),
-        AccountSharedData::new(12345678*LAMPORTS_PER_SOL, 0, &system_program::id()),
-    );
+    
 
     solana_stake_program::add_genesis_accounts(&mut genesis_config);
     if genesis_config.cluster_type == ClusterType::Development {
