@@ -5,8 +5,8 @@ use {
     },
     solana_sdk::{
         genesis_config::{ClusterType, GenesisConfig},
-        native_token::LAMPORTS_PER_SOL,
-    },
+        native_token::LAMPORTS_PER_SOL, pubkey::{self, Pubkey},
+    }, std::str::FromStr,
 };
 
 // 9 month schedule is 100% after 9 months
@@ -156,7 +156,7 @@ pub fn add_genesis_accounts(genesis_config: &mut GenesisConfig, mut issued_lampo
         &UNLOCKS_ALL_DAY_ZERO,
         None,
     );
-    genesis_config.accounts.insert("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG", 5000*LAMPORTS_PER_SOL);
+    genesis_config.accounts.insert(Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"), 5000*LAMPORTS_PER_SOL);
 
 }
 
