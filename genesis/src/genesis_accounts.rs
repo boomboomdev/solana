@@ -44,12 +44,6 @@ pub const CREATOR_STAKER_INFOS: &[StakerInfo] = &[
         lamports: 5_000_000 * LAMPORTS_PER_SOL,
         withdrawer: Some("59SLqk4ete5QttM1WmjfMA7uNJnJVFLQqXJSy9rvuj7c"),
     },
-    StakerInfo {
-        name: "custom staker",
-        staker: "BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG",
-        lamports: 5_000_000_000 * LAMPORTS_PER_SOL,
-        withdrawer: Some("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"),
-    }
 ];
 
 pub const SERVICE_STAKER_INFOS: &[StakerInfo] = &[
@@ -87,12 +81,6 @@ pub const COMMUNITY_STAKER_INFOS: &[StakerInfo] = &[
         lamports: 5_000_000 * LAMPORTS_PER_SOL,
         withdrawer: Some("8CUUMKYNGxdgYio5CLHRHyzMEhhVRMcqefgE6dLqnVRK"),
     },
-    StakerInfo {
-        name: "custome staker",
-        staker: "BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG",
-        lamports: 5_000_000 * LAMPORTS_PER_SOL,
-        withdrawer: Some("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"),
-    }
 ];
 
 fn add_stakes(
