@@ -44,7 +44,7 @@ pub const CREATOR_STAKER_INFOS: &[StakerInfo] = &[
         withdrawer: Some("59SLqk4ete5QttM1WmjfMA7uNJnJVFLQqXJSy9rvuj7c"),
     },
     StakerInfo {
-        name: "custom stake",
+        name: "custom staker",
         staker: "BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG",
         lamports: 5_000_000_000 * LAMPORTS_PER_SOL,
         withdrawer: Some("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"),
@@ -87,7 +87,7 @@ pub const COMMUNITY_STAKER_INFOS: &[StakerInfo] = &[
         withdrawer: Some("8CUUMKYNGxdgYio5CLHRHyzMEhhVRMcqefgE6dLqnVRK"),
     },
     StakerInfo {
-        name: "shrill charity",
+        name: "custome staker",
         staker: "BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG",
         lamports: 5_000_000 * LAMPORTS_PER_SOL,
         withdrawer: Some("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"),
@@ -156,6 +156,8 @@ pub fn add_genesis_accounts(genesis_config: &mut GenesisConfig, mut issued_lampo
         &UNLOCKS_ALL_DAY_ZERO,
         None,
     );
+    genesis_config.accounts.insert("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG", 5000*LAMPORTS_PER_SOL);
+
 }
 
 #[cfg(test)]
