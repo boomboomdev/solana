@@ -160,19 +160,19 @@ pub fn add_genesis_accounts(genesis_config: &mut GenesisConfig, mut issued_lampo
     
 
     // Insert the account with the specified balance
-    // let pubkey = Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG")
-    // .expect("Error parsing public key");
-    // let balance = 5_000_000 * LAMPORTS_PER_SOL;
-    // genesis_config.accounts.insert(
-    //     pubkey,
-    //     Account {
-    //         lamports: balance,
-    //         data: vec![],
-    //         owner:system_program::id(),  // This can be a specific program's Pubkey if needed
-    //         executable: false,
-    //         rent_epoch: 0,
-    //     },
-    // );
+    let pubkey = Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG")
+    .expect("Error parsing public key");
+    let balance = 5_000_000 * LAMPORTS_PER_SOL;
+    genesis_config.accounts.insert(
+        pubkey,
+        Account {
+            lamports: balance,
+            data: vec![],
+            owner:system_program::id(),  // This can be a specific program's Pubkey if needed
+            executable: false,
+            rent_epoch: 0,
+        },
+    );
     // genesis_config.accounts.insert(Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG").expect("Error to get Pubkey"), Account::new(500_000_000_000_000_000, 0, &system_program::id()));
 
 }
