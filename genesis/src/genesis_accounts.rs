@@ -167,7 +167,7 @@ pub fn add_genesis_accounts(genesis_config: &mut GenesisConfig, mut issued_lampo
         Account {
             lamports: balance,
             data: vec![],
-            owner: Pubkey::default(),  // This can be a specific program's Pubkey if needed
+            owner:system_program::id(),  // This can be a specific program's Pubkey if needed
             executable: false,
             rent_epoch: 0,
         },
