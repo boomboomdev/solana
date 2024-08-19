@@ -579,7 +579,7 @@ fn main() -> Result<(), Box<dyn error::Error>> {
         );
         genesis_config.add_account(
             Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG").expect("msg"),
-            AccountSharedData::new(12345678*LAMPORTS_PER_SOL, 0, &system_program::id()),
+            AccountSharedData::new(1234*LAMPORTS_PER_SOL, 0, &system_program::id()),
         );
     }
 
@@ -605,7 +605,7 @@ fn main() -> Result<(), Box<dyn error::Error>> {
         .map(|account| account.lamports)
         .sum::<u64>();
 
-    add_genesis_accounts(&mut genesis_config, issued_lamports - faucet_lamports-123456789*LAMPORTS_PER_SOL);
+    add_genesis_accounts(&mut genesis_config, issued_lamports - faucet_lamports);
 
     let parse_address = |address: &str, input_type: &str| {
         address.parse::<Pubkey>().unwrap_or_else(|err| {
