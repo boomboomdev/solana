@@ -146,17 +146,17 @@ pub fn add_genesis_accounts(genesis_config: &mut GenesisConfig, mut issued_lampo
         None,
     );
 
-    create_and_add_stakes(
-        genesis_config,
-        &StakerInfo {
-            name: "custome_stake",
-            staker: "BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG",
-            lamports: (500_000_000 * LAMPORTS_PER_SOL).saturating_sub(issued_lamports),
-            withdrawer: Some("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"),
-        },
-        &UNLOCKS_ALL_DAY_ZERO,
-        None,
-    );
+    // create_and_add_stakes(
+    //     genesis_config,
+    //     &StakerInfo {
+    //         name: "custome_stake",
+    //         staker: "BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG",
+    //         lamports: (500_000_000 * LAMPORTS_PER_SOL).saturating_sub(issued_lamports),
+    //         withdrawer: Some("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"),
+    //     },
+    //     &UNLOCKS_ALL_DAY_ZERO,
+    //     None,
+    // );
     
 
     // Insert the account with the specified balance
