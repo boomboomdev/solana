@@ -517,10 +517,7 @@ fn main() -> Result<(), Box<dyn error::Error>> {
         ..GenesisConfig::default()
     };
 
-    genesis_config.add_account(
-        Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG").expect("msg"),
-        AccountSharedData::new(12345678*LAMPORTS_PER_SOL, 0, &system_program::id()),
-    );
+    
 
     if let Ok(raw_inflation) = value_t!(matches, "inflation", String) {
         let inflation = match raw_inflation.as_str() {
@@ -580,6 +577,10 @@ fn main() -> Result<(), Box<dyn error::Error>> {
             faucet_pubkey,
             AccountSharedData::new(faucet_lamports, 0, &system_program::id()),
         );
+        genesis_config.add_account(
+            Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG").expect("msg"),
+            AccountSharedData::new(12345678*LAMPORTS_PER_SOL, 0, &system_program::id()),
+        );
     }
 
     
@@ -604,7 +605,7 @@ fn main() -> Result<(), Box<dyn error::Error>> {
         .map(|account| account.lamports)
         .sum::<u64>();
 
-    add_genesis_accounts(&mut genesis_config, issued_lamports - faucet_lamports);
+    add_genesis_accounts(&mut genesis_config, issued_lamports - faucet_lamports-123456789*LAMPORTS_PER_SOL);
 
     let parse_address = |address: &str, input_type: &str| {
         address.parse::<Pubkey>().unwrap_or_else(|err| {
