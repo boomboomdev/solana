@@ -517,8 +517,6 @@ fn main() -> Result<(), Box<dyn error::Error>> {
         ..GenesisConfig::default()
     };
 
-    
-
     if let Ok(raw_inflation) = value_t!(matches, "inflation", String) {
         let inflation = match raw_inflation.as_str() {
             "pico" => Inflation::pico(),
@@ -577,10 +575,12 @@ fn main() -> Result<(), Box<dyn error::Error>> {
             faucet_pubkey,
             AccountSharedData::new(faucet_lamports, 0, &system_program::id()),
         );
-        
     }
 
-    
+    // genesis_config.add_account(
+    //     Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG").expect("msg"),
+    //     AccountSharedData::new(123*LAMPORTS_PER_SOL, 0, &system_program::id()),
+    // );
 
     solana_stake_program::add_genesis_accounts(&mut genesis_config);
     if genesis_config.cluster_type == ClusterType::Development {
@@ -603,11 +603,6 @@ fn main() -> Result<(), Box<dyn error::Error>> {
         .sum::<u64>();
 
     add_genesis_accounts(&mut genesis_config, issued_lamports - faucet_lamports);
-
-    genesis_config.add_account(
-        Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG").expect("msg"),
-        AccountSharedData::new(12*LAMPORTS_PER_SOL, 0, &system_program::id()),
-    );
 
     let parse_address = |address: &str, input_type: &str| {
         address.parse::<Pubkey>().unwrap_or_else(|err| {
