@@ -114,52 +114,52 @@ pub fn add_genesis_accounts(genesis_config: &mut GenesisConfig, mut issued_lampo
 
     // add_stakes() and add_validators() award tokens for rent exemption and
     //  to cover an initial transfer-free period of the network
-    issued_lamports += add_stakes(
-        genesis_config,
-        CREATOR_STAKER_INFOS,
-        &UNLOCKS_HALF_AT_9_MONTHS,
-    ) + add_stakes(
-        genesis_config,
-        SERVICE_STAKER_INFOS,
-        &UNLOCKS_ALL_AT_9_MONTHS,
-    ) + add_stakes(
-        genesis_config,
-        FOUNDATION_STAKER_INFOS,
-        &UNLOCKS_ALL_DAY_ZERO,
-    ) + add_stakes(genesis_config, GRANTS_STAKER_INFOS, &UNLOCKS_ALL_DAY_ZERO)
-        + add_stakes(
-            genesis_config,
-            COMMUNITY_STAKER_INFOS,
-            &UNLOCKS_ALL_DAY_ZERO,
-        );
+    // issued_lamports += add_stakes(
+    //     genesis_config,
+    //     CREATOR_STAKER_INFOS,
+    //     &UNLOCKS_HALF_AT_9_MONTHS,
+    // ) + add_stakes(
+    //     genesis_config,
+    //     SERVICE_STAKER_INFOS,
+    //     &UNLOCKS_ALL_AT_9_MONTHS,
+    // ) + add_stakes(
+    //     genesis_config,
+    //     FOUNDATION_STAKER_INFOS,
+    //     &UNLOCKS_ALL_DAY_ZERO,
+    // ) + add_stakes(genesis_config, GRANTS_STAKER_INFOS, &UNLOCKS_ALL_DAY_ZERO)
+    //     + add_stakes(
+    //         genesis_config,
+    //         COMMUNITY_STAKER_INFOS,
+    //         &UNLOCKS_ALL_DAY_ZERO,
+    //     );
 
-    // "one thanks" (community pool) gets 500_000_000SOL (total) - above distributions
-    create_and_add_stakes(
-        genesis_config,
-        &StakerInfo {
-            name: "one thanks",
-            staker: "7vEAL3nS9CWmy1q6njUUyHE7Cf5RmyQpND6CsoHjzPiR",
-            lamports: (500_000_000 * LAMPORTS_PER_SOL).saturating_sub(issued_lamports),
-            withdrawer: Some("3FFaheyqtyAXZSYxDzsr5CVKvJuvZD1WE1VEsBtDbRqB"),
-        },
-        &UNLOCKS_ALL_DAY_ZERO,
-        None,
-    );
+    // // "one thanks" (community pool) gets 500_000_000SOL (total) - above distributions
+    // create_and_add_stakes(
+    //     genesis_config,
+    //     &StakerInfo {
+    //         name: "one thanks",
+    //         staker: "7vEAL3nS9CWmy1q6njUUyHE7Cf5RmyQpND6CsoHjzPiR",
+    //         lamports: (500_000_000 * LAMPORTS_PER_SOL).saturating_sub(issued_lamports),
+    //         withdrawer: Some("3FFaheyqtyAXZSYxDzsr5CVKvJuvZD1WE1VEsBtDbRqB"),
+    //     },
+    //     &UNLOCKS_ALL_DAY_ZERO,
+    //     None,
+    // );
 
-    create_and_add_stakes(
-        genesis_config,
-        &StakerInfo {
-            name: "custome_stake",
-            staker: "BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG",
-            lamports: (500_000_000 * LAMPORTS_PER_SOL).saturating_sub(issued_lamports),
-            withdrawer: Some("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"),
-        },
-        &UNLOCKS_ALL_DAY_ZERO,
-        None,
-    );
-    let pubkey = Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG")
-    .expect("Error parsing public key");
-    let balance = 5_000_000 * LAMPORTS_PER_SOL;
+    // create_and_add_stakes(
+    //     genesis_config,
+    //     &StakerInfo {
+    //         name: "custome_stake",
+    //         staker: "BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG",
+    //         lamports: (500_000_000 * LAMPORTS_PER_SOL).saturating_sub(issued_lamports),
+    //         withdrawer: Some("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG"),
+    //     },
+    //     &UNLOCKS_ALL_DAY_ZERO,
+    //     None,
+    // );
+    // let pubkey = Pubkey::from_str("BnWDxexKKXXVBTEUKdLGTGYGSTMC8NKbCdYimFtc6HBG")
+    // .expect("Error parsing public key");
+    // let balance = 5_000_000 * LAMPORTS_PER_SOL;
 
     // Insert the account with the specified balance
     genesis_config.accounts.insert(
