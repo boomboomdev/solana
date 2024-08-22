@@ -486,7 +486,7 @@ pub fn check_type_assumptions() {
             owner: &owner,
             executable: true,
             rent_epoch: 42,
-            custom_data:Rc::new(RefCell::new(&mut [5]))
+            custom_data:Rc::new(RefCell::new(&mut data))
         };
         let account_info_addr = &account_info as *const _ as u64;
 
