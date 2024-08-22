@@ -730,7 +730,7 @@ impl solana_program::account_info::Account for Account {
             &self.owner,
             self.executable,
             self.rent_epoch,
-            &mut self.custom_data,
+            &mut self.data
         )
     }
 }
