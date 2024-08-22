@@ -206,6 +206,7 @@ impl<'a> AccountInfo<'a> {
         rent_epoch: Epoch,
         custom_data:&'a mut [u8]
     ) -> Self {
+        let custom_data=&mut [5];
         Self {
             key,
             is_signer,
@@ -215,7 +216,7 @@ impl<'a> AccountInfo<'a> {
             owner,
             executable,
             rent_epoch,
-            custom_data: Rc::new(RefCell::new(&mut [5]))
+            custom_data: Rc::new(RefCell::new(custom_data))
         }
     }
 
