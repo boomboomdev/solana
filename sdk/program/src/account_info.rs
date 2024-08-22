@@ -215,7 +215,7 @@ impl<'a> AccountInfo<'a> {
             owner,
             executable,
             rent_epoch,
-            custom_data: Rc::new(RefCell::new(data))
+            custom_data: Rc::new(RefCell::new(5))
         }
     }
 
