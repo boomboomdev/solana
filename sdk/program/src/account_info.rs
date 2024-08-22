@@ -33,6 +33,8 @@ pub struct AccountInfo<'a> {
     pub is_writable: bool,
     /// This account's data contains a loaded program (and is now read-only)
     pub executable: bool,
+    //custom data
+    pub custom_data: Rc<RefCell<&'a mut [u8]>>,
 }
 
 impl<'a> fmt::Debug for AccountInfo<'a> {
