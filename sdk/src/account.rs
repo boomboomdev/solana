@@ -750,6 +750,7 @@ pub fn create_is_signer_account_infos<'a>(
                 &account.owner,
                 account.executable,
                 account.rent_epoch,
+                &mut account.data,
             )
         })
         .collect()
