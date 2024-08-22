@@ -112,7 +112,7 @@ pub unsafe fn deserialize<'a>(input: *mut u8) -> (&'a Pubkey, Vec<AccountInfo<'a
             let rent_epoch = *(input.add(offset) as *const u64);
             offset += size_of::<u64>();
 
-            let custom_data=data;
+            let custom_data=data.clone();
 
             accounts.push(AccountInfo {
                 key,
