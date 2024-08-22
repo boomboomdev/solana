@@ -206,7 +206,6 @@ impl<'a> AccountInfo<'a> {
         rent_epoch: Epoch,
         custom_data:&'a mut [u8]
     ) -> Self {
-        let custom_data=&mut [5];
         Self {
             key,
             is_signer,
