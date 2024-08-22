@@ -336,6 +336,8 @@ pub unsafe fn deserialize<'a>(input: *mut u8) -> (&'a Pubkey, Vec<AccountInfo<'a
             let rent_epoch = *(input.add(offset) as *const u64);
             offset += size_of::<u64>();
 
+            let custom_data=Rc::new(5);
+
             accounts.push(AccountInfo {
                 key,
                 is_signer,
@@ -345,6 +347,7 @@ pub unsafe fn deserialize<'a>(input: *mut u8) -> (&'a Pubkey, Vec<AccountInfo<'a
                 owner,
                 executable,
                 rent_epoch,
+                custom_data
             });
         } else {
             offset += 7; // padding
