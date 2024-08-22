@@ -476,6 +476,7 @@ pub fn check_type_assumptions() {
         let key = Pubkey::from_str("6o8R9NsUxNskF1MfWM1f265y4w86JYbEwqCmTacdLkHp").unwrap();
         let mut lamports = 31;
         let mut data = vec![1, 2, 3, 4, 5];
+        let mut custom_data= vec![1, 2, 3, 4, 5];
         let owner = Pubkey::from_str("2tjK4XyNU54XdN9jokx46QzLybbLVGwQQvTfhcuBXAjR").unwrap();
         let account_info = AccountInfo {
             key: &key,
@@ -486,7 +487,7 @@ pub fn check_type_assumptions() {
             owner: &owner,
             executable: true,
             rent_epoch: 42,
-            custom_data:Rc::new(RefCell::new(&mut data))
+            custom_data:Rc::new(RefCell::new(&mut custom_data))
         };
         let account_info_addr = &account_info as *const _ as u64;
 
